@@ -1,0 +1,31 @@
+<p>register works!</p>
+
+<form #register="ngForm" (ngSubmit)="submitData()" novalidate>
+        <label for=userid >userID</label>
+        <input id=userid name=userid type="text" 
+            [(ngModel)]="input.id" #userid="ngModel" required/>
+        <br/>
+        <label for=password>password</label>
+        <input id=password name=password type="password" 
+            required minlength="8" maxlength="20"
+            [(ngModel)]="input.pass" #password="ngModel" />
+        <ng-container *ngIf="password.hasError('minlength')">
+            <span class="errMsg" >
+                パスワードは6文字以上入力してください。
+            </span>
+        </ng-container>
+        <br/>
+        <label for=first-name >first-name</label>
+        <input id=first-name name=first-name type="text" 
+            [(ngModel)]="input.firstName" #firstName="ngModel" required/>
+        <br/>
+        <label for=family-name >family-name</label>
+        <input id=family-name name=family-name type="text" 
+            [(ngModel)]="input.familyName" #familyName="ngModel" required/>
+        <br/>
+        <label for=user-name >user-name</label>
+        <input id=user-name name=user-name type="text" 
+            [(ngModel)]="input.userName" #userName="ngModel" required/>
+        <br/>
+        <input type=submit value="Register" [disabled]="register.invalid"/>
+</form>

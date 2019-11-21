@@ -1,0 +1,10 @@
+<p>top works!</p>
+
+<ng-container *ngIf="isSinedIn; else SignedOut">
+    <app-signout-button>サインアウト</app-signout-button><br/>
+</ng-container>
+<ng-template #SignedOut>
+        <button routerLink="/signin">サインインページへ</button><br/>
+        <button routerLink="/register">ユーザ登録ページへ</button><br/>
+</ng-template>
+<button routerLink="/my-page">マイページへ</button><br/>

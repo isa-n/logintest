@@ -1,0 +1,16 @@
+[
+    {
+      "id": "user",
+      "pass": "userpass",
+      "firstName":"なまえ",
+      "familyName": "みょうじ",
+      "userName": "ユーザー"
+    },
+    {
+        "id": "admin",
+        "pass": "adminpass",
+        "firstName":"カンリシャ",
+        "familyName": "システム",
+        "userName": "管理者"
+      }
+]

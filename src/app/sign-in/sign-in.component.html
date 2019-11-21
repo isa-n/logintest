@@ -1,0 +1,18 @@
+<p>sign-in works!</p>
+
+<form #signIn="ngForm" (ngSubmit)="signin()" novalidate>
+    <label for=userid >userID</label>
+    <input id=userid name=userid type="text" 
+        [(ngModel)]="user.id" #userid="ngModel" required/><br/>
+    <label for=password>password</label>
+    <input id=password name=password type="password" 
+        [(ngModel)]="user.pass" #password="ngModel" required/><br/>
+    <input type=submit value="SignIn" [disabled]="signIn.invalid"/>
+    <ng-container *ngIf=viewMessage>
+        <span class="errMsg" >
+            ログインに失敗しました。
+        </span>
+    </ng-container>
+    <br/><button routerLink="/register">Register</button>
+    
+</form>

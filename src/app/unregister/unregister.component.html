@@ -1,0 +1,8 @@
+<p>unregister works!</p>
+
+<form #unRegister="ngForm" (ngSubmit)="submitData()" novalidate>
+    <label for=password>password</label>
+    <input id=password name=password type="password" 
+        [(ngModel)]="input" #password="ngModel" required minlength="6"/><br/>
+    <input type=submit value="Unregister" [disabled]="unRegister.invalid"/>
+</form>
